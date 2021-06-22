@@ -31,7 +31,7 @@ class NotifyRSSI {
         updateValueCallback(data);
         bleno.updateRssi((err, rssi) => (this.rssi = err ? 0 : rssi));
       }.bind(this),
-      1000
+      500
     );
   }
   onUnsubscribe() {
