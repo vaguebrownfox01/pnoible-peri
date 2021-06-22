@@ -3,9 +3,9 @@
 # Pnoi-phone BLE pheripheral interface
 
 ## node : v8.17.0
-curl https://unofficial-builds.nodejs.org/download/release/v8.17.0/node-v8.17.0-linux-armv6l.tar.gz -o nodev8
-
-cp /nodev8/* /usr/local
+curl https://unofficial-builds.nodejs.org/download/release/v8.17.0/node-v8.17.0-linux-armv6l.tar.gz
+tar -xvf node-v8.17.0-linux-armv6l.tar.gz
+cp /node-v8.17.0-linux-armv6l/* /usr/local/
 reboot
 
 ## BlueZ
