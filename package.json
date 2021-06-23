@@ -9,7 +9,6 @@
   "author": "Jeevan K | vague.brown.fox",
   "license": "ISC",
   "dependencies": {
-    "bleno": "^0.5.0",
-    "node-audiorecorder": "^2.2.0"
+    "bleno": "^0.5.0"
   }
 }
