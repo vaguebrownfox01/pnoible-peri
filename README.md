@@ -43,7 +43,10 @@ sudo make install
 cd ~
 ```
 ```
-wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.54.tar.xz tar -xvf bluez-5.54.tar.xz
+wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.54.tar.xz 
+```
+```
+tar -xvf bluez-5.54.tar.xz
 ```
 ```
 cd bluez-5.54/
