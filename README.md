@@ -23,7 +23,10 @@ reboot
 cd ~
 ```
 ```
-wget https://s3.amazonaws.com/json-c_releases/releases/json-c-0.13.tar.gz tar -xvf json-c-0.13.tar.gz
+wget https://s3.amazonaws.com/json-c_releases/releases/json-c-0.13.tar.gz 
+```
+```
+tar -xvf json-c-0.13.tar.gz
 ```
 ```
 cd json-c-0.13/
