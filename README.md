@@ -4,7 +4,7 @@
 
 ## Get NodeJS : v8.17.0
 ```
-curl https://unofficial-builds.nodejs.org/download/release/v8.17.0/node-v8.17.0-linux-armv6l.tar.gz
+curl https://unofficial-builds.nodejs.org/download/release/v8.17.0/node-v8.17.0-linux-armv6l.tar.gz -o node-v8.17.0-linux-armv6l.tar.gz
 ```
 ```
 tar -xvf node-v8.17.0-linux-armv6l.tar.gz
