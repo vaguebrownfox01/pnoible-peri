@@ -31,7 +31,10 @@ class WriteOnly {
     switch (command) {
       case "0a":
         let stream = mic.start().stream();
-        stream.on("data", (d) => console.log("data", d));
+        stream.on("data", (d) => {
+          let size = Buffer.byteLength(d);
+          console.log("data size: ", size);
+        });
         // console.log("stream", stream);
         break;
       case "0b":
