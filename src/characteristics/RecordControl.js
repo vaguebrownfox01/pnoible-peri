@@ -50,7 +50,7 @@ class RecordControl {
           let size = Buffer.byteLength(d);
           console.log("data size: ", size);
         });
-        console.log("w/o res", withoutResponse);
+        console.log("w/o res:", withoutResponse, "offset:", offset);
         break;
       case "0b":
         this.mic.stop();
