@@ -48,9 +48,9 @@ class RecordControl {
         let stream = this.mic.start().stream();
         stream.on("data", (d) => {
           let size = Buffer.byteLength(d);
-          console.log("data size: ", size, withoutResponse);
+          console.log("data size: ", size);
         });
-        // console.log("stream", stream);
+        console.log("w/o res", withoutResponse);
         break;
       case "0b":
         this.mic.stop();
