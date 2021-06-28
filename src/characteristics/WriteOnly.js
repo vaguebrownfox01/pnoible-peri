@@ -1,9 +1,17 @@
 const util = require("util");
 const bleno = require("bleno");
-const { audioRecorder } = require("../record/rec");
-
+const { getMic } = require("../record/mic");
 const BlenoCharacteristic = bleno.Characteristic;
 const BlenoDescriptor = bleno.Descriptor;
+
+const mic = getMic({
+  device: `plughw:0`, // Recording device to use, e.g. `hw:1,0`
+  format: `S16_LE`, // Encoding type. (only for `arecord`)
+  rate: 8000, // Sample rate.
+  type: `wav`, // Format type.
+  duration: 10,
+  file: "test.wav",
+});
 
 class WriteOnly {
   constructor() {
@@ -22,10 +30,10 @@ class WriteOnly {
     let command = data.toString("hex");
     switch (command) {
       case "0a":
-        audioRecorder.start();
+        mic.start();
         break;
       case "0b":
-        audioRecorder.stop();
+        mic.stop();
         break;
       default:
         console.log("unknown command received");
