@@ -4,7 +4,8 @@
   "description": "Pnoi-phone BLE interface",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "sudo node src/",
+	"test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jeevan K | vague.brown.fox",
   "license": "ISC",
