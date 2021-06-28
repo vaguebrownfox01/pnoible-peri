@@ -69,8 +69,7 @@ class Arecorder extends require("events").EventEmitter {
         }
         if (this.options.periodSize) {
           this.command.arguments.push(
-            "--period-size=",
-            `${this.options.periodSize}`
+            `--period-size=${this.options.periodSize}`
           );
         }
         if (this.options.file) {
