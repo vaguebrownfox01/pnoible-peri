@@ -4,17 +4,17 @@ const { getMic } = require("../record/mic");
 const BlenoCharacteristic = bleno.Characteristic;
 const BlenoDescriptor = bleno.Descriptor;
 
-const mic = getMic({
-  device: `plughw:0`, // Recording device to use, e.g. `hw:1,0`
-  format: `S8`, // Encoding type. (only for `arecord`)
-  rate: 16000, // Sample rate.
-  type: `raw`, // Format type.
-
-  periodTime: 16000,
-  // periodSize: `16`,
-  // duration: 10,
-  // file: "test.wav",
-});
+// const mic = getMic({
+//   device: `plughw:0`, // Recording device to use, e.g. `hw:1,0`
+//   format: `S16_LE`, // Encoding type. (only for `arecord`)
+//   rate: 16000, // Sample rate.
+//   type: `wav`, // Format type.
+//   channel: 1,
+//   periodTime: 16000,
+//   // periodSize: `16`,
+//   // duration: 10,
+//   // file: "test.wav",
+// });
 
 class WriteOnly {
   constructor() {
@@ -33,6 +33,18 @@ class WriteOnly {
     let command = data.toString("hex");
     switch (command) {
       case "0a":
+        const mic = getMic({
+          device: `plughw:0`, // Recording device to use, e.g. `hw:1,0`
+          format: `S16_LE`, // Encoding type. (only for `arecord`)
+          rate: 16000, // Sample rate.
+          type: `wav`, // Format type.
+          channel: 2,
+          // periodTime: 16000,
+          // periodSize: `16`,
+          // duration: 10,
+          file: "record.wav",
+        });
+
         let stream = mic.start().stream();
         stream.on("data", (d) => {
           let size = Buffer.byteLength(d);
@@ -47,14 +59,7 @@ class WriteOnly {
         console.log("unknown command received");
         break;
     }
-    console.log(
-      "WriteOnly write request: " +
-        data.toString("hex") +
-        " " +
-        offset +
-        " " +
-        withoutResponse
-    );
+    console.log(`command code: ${data.toString("hex")}`);
 
     callback(this.RESULT_SUCCESS);
   }
