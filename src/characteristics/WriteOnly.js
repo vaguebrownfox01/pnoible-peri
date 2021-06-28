@@ -9,7 +9,7 @@ const mic = getMic({
   format: `S16_LE`, // Encoding type. (only for `arecord`)
   rate: 8000, // Sample rate.
   type: `wav`, // Format type.
-  duration: 10,
+  // duration: 10,
   file: "test.wav",
 });
 
@@ -32,7 +32,7 @@ class WriteOnly {
       case "0a":
         let stream = mic.start().stream();
         stream.on("data", (d) => console.log("data", d));
-        console.log("stream", stream);
+        // console.log("stream", stream);
         break;
       case "0b":
         mic.stop();
