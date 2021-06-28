@@ -6,7 +6,7 @@ const BlenoDescriptor = bleno.Descriptor;
 
 const mic = getMic({
   device: `plughw:0`, // Recording device to use, e.g. `hw:1,0`
-  format: `S16_LE`, // Encoding type. (only for `arecord`)
+  format: `S8`, // Encoding type. (only for `arecord`)
   rate: 16000, // Sample rate.
   type: `raw`, // Format type.
 
