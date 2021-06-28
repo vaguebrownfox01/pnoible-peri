@@ -11,19 +11,19 @@ const BlenoDescriptor = bleno.Descriptor;
 //   type: `wav`, // Format type.
 //   channel: 1,
 //   periodTime: 16000,
-//   // periodSize: `16`,
-//   // duration: 10,
-//   // file: "test.wav",
+//   periodSize: `16`,
+//   duration: 10,
+//   file: "test.wav",
 // });
 
-class WriteOnly {
+class RecordControl {
   constructor() {
-    WriteOnly.super_.call(this, {
-      uuid: "fff4",
-      properties: ["write", "writeWithoutResponse"],
+    RecordControl.super_.call(this, {
+      uuid: "ace1",
+      properties: ["write"],
       descriptors: [
         new BlenoDescriptor({
-          uuid: "0004",
+          uuid: "ac11",
           value: "Send commands to execute",
         }),
       ],
@@ -48,7 +48,7 @@ class WriteOnly {
         let stream = this.mic.start().stream();
         stream.on("data", (d) => {
           let size = Buffer.byteLength(d);
-          console.log("data size: ", size);
+          console.log("data size: ", size, withoutResponse);
         });
         // console.log("stream", stream);
         break;
@@ -65,6 +65,6 @@ class WriteOnly {
   }
 }
 
-util.inherits(WriteOnly, BlenoCharacteristic);
+util.inherits(RecordControl, BlenoCharacteristic);
 
-module.exports = { WriteOnly };
+module.exports = { RecordControl };
