@@ -33,7 +33,7 @@ class WriteOnly {
     let command = data.toString("hex");
     switch (command) {
       case "0a":
-        const mic = getMic({
+        this.mic = getMic({
           device: `plughw:0`, // Recording device to use, e.g. `hw:1,0`
           format: `S16_LE`, // Encoding type. (only for `arecord`)
           rate: 16000, // Sample rate.
@@ -45,7 +45,7 @@ class WriteOnly {
           file: "record.wav",
         });
 
-        let stream = mic.start().stream();
+        let stream = this.mic.start().stream();
         stream.on("data", (d) => {
           let size = Buffer.byteLength(d);
           console.log("data size: ", size);
@@ -53,7 +53,7 @@ class WriteOnly {
         // console.log("stream", stream);
         break;
       case "0b":
-        mic.stop();
+        this.mic.stop();
         break;
       default:
         console.log("unknown command received");
