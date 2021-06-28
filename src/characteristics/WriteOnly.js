@@ -10,7 +10,7 @@ const mic = getMic({
   rate: 16000, // Sample rate.
   type: `raw`, // Format type.
 
-  periodTime: 12000,
+  periodTime: 8000,
   // periodSize: `16`,
   // duration: 10,
   // file: "test.wav",
