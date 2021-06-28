@@ -7,12 +7,12 @@ const BlenoDescriptor = bleno.Descriptor;
 class StaticReadOnly {
   constructor() {
     StaticReadOnly.super_.call(this, {
-      uuid: "fff1",
+      uuid: "fad2",
       properties: ["read"],
       value: Buffer.from("value", "utf8"),
       descriptors: [
         new BlenoDescriptor({
-          uuid: "2901",
+          uuid: "fa22",
           value: "sample value",
         }),
       ],

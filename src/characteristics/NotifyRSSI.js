@@ -7,11 +7,11 @@ const BlenoDescriptor = bleno.Descriptor;
 class NotifyRSSI {
   constructor() {
     NotifyRSSI.super_.call(this, {
-      uuid: "fff5",
+      uuid: "fad1",
       properties: ["notify"],
       descriptors: [
         new BlenoDescriptor({
-          uuid: "0005",
+          uuid: "fa11",
           value: "Notify rssi to client",
         }),
       ],
@@ -24,9 +24,7 @@ class NotifyRSSI {
     this.changeInterval = setInterval(
       function () {
         var data = Buffer.alloc(4);
-        console.log(typeof this.rssi);
         data.writeFloatBE(this.rssi);
-
         console.log("NotifyRSSI update value: " + this.rssi);
         updateValueCallback(data);
         bleno.updateRssi((err, rssi) => (this.rssi = err ? 0 : rssi));

@@ -1,6 +1,7 @@
 const bleno = require("bleno");
 
 const { PnoiService } = require("./services/PnoiService");
+const { UtilService } = require("./services/UtilService");
 
 process.env["BLENO_DEVICE_NAME"] = "Pnoi";
 
@@ -8,7 +9,7 @@ bleno.on("stateChange", function (state) {
   console.log("on -> stateChange: " + state + ", address = " + bleno.address);
 
   if (state === "poweredOn") {
-    bleno.startAdvertising("LE_Pnoi", ["cdcd"]);
+    bleno.startAdvertising("LE_Pnoi", ["cafe"]);
   } else {
     bleno.stopAdvertising();
   }
@@ -20,7 +21,7 @@ bleno.on("advertisingStart", function (error) {
   );
 
   if (!error) {
-    bleno.setServices([new PnoiService()]);
+    bleno.setServices([new PnoiService(), new UtilService()]);
   }
 });
 
