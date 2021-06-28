@@ -48,7 +48,7 @@ class Arecorder extends require("events").EventEmitter {
         // Format type
         "-t",
         this.options.type,
-        "-I",
+        // "-I",
       ],
       options: {
         encoding: "binary",
