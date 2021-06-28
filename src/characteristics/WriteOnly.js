@@ -30,7 +30,8 @@ class WriteOnly {
     let command = data.toString("hex");
     switch (command) {
       case "0a":
-        mic.start();
+        let stream = mic.start().stream();
+        console.log("stream", stream);
         break;
       case "0b":
         mic.stop();
