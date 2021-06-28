@@ -10,7 +10,7 @@ const mic = getMic({
   rate: 8000, // Sample rate.
   type: `wav`, // Format type.
   // duration: 10,
-  file: "test.wav",
+  // file: "test.wav",
 });
 
 class WriteOnly {
