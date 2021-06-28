@@ -8,7 +8,8 @@ const mic = getMic({
   device: `plughw:0`, // Recording device to use, e.g. `hw:1,0`
   format: `S16_LE`, // Encoding type. (only for `arecord`)
   rate: 8000, // Sample rate.
-  type: `wav`, // Format type.
+  type: `raw`, // Format type.
+  periodSize: `1`,
   // duration: 10,
   // file: "test.wav",
 });
