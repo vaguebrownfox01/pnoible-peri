@@ -9,6 +9,8 @@ const mic = getMic({
   format: `S16_LE`, // Encoding type. (only for `arecord`)
   rate: 16000, // Sample rate.
   type: `raw`, // Format type.
+
+  periodTime: 1000,
   // periodSize: `16`,
   // duration: 10,
   // file: "test.wav",

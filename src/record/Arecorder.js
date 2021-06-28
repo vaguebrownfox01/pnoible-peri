@@ -29,6 +29,7 @@ class Arecorder extends require("events").EventEmitter {
         duration: null,
         file: null, //`test.${this.type}`,
         periodSize: null,
+        periodTime: null,
       },
       options
     );
@@ -66,6 +67,11 @@ class Arecorder extends require("events").EventEmitter {
         );
         if (this.options.duration) {
           this.command.arguments.push("-d", `${this.options.duration}`);
+        }
+        if (this.options.periodTime) {
+          this.command.arguments.push(
+            `--period-time=${this.options.periodTime}`
+          );
         }
         if (this.options.periodSize) {
           this.command.arguments.push(
