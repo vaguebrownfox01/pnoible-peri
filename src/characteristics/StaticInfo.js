@@ -4,22 +4,22 @@ const bleno = require("bleno");
 const BlenoCharacteristic = bleno.Characteristic;
 const BlenoDescriptor = bleno.Descriptor;
 
-class StaticReadOnly {
+class StaticInfo {
   constructor() {
-    StaticReadOnly.super_.call(this, {
+    StaticInfo.super_.call(this, {
       uuid: "fad2",
       properties: ["read"],
-      value: Buffer.from("value", "utf8"),
+      value: Buffer.from("Pnoi-phone", "utf8"),
       descriptors: [
         new BlenoDescriptor({
           uuid: "fa22",
-          value: "sample value",
+          value: "Pnoi phone BLE interface",
         }),
       ],
     });
   }
 }
 
-util.inherits(StaticReadOnly, BlenoCharacteristic);
+util.inherits(StaticInfo, BlenoCharacteristic);
 
-module.exports = { StaticReadOnly };
+module.exports = { StaticInfo };

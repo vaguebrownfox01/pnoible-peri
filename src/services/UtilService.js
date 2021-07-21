@@ -1,7 +1,7 @@
 const util = require("util");
 const bleno = require("bleno");
 
-const { StaticReadOnly } = require("../characteristics/StaticReadOnly");
+const { StaticInfo } = require("../characteristics/StaticInfo");
 const { NotifyRSSI } = require("../characteristics/NotifyRSSI");
 
 const BlenoPrimaryService = bleno.PrimaryService;
@@ -9,7 +9,7 @@ const BlenoPrimaryService = bleno.PrimaryService;
 function UtilService() {
   UtilService.super_.call(this, {
     uuid: "fad0",
-    characteristics: [new StaticReadOnly(), new NotifyRSSI()],
+    characteristics: [new StaticInfo(), new NotifyRSSI()],
   });
 }
 util.inherits(UtilService, BlenoPrimaryService);
