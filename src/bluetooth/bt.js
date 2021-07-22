@@ -36,5 +36,8 @@ blue.on(blue.bluetoothEvents.Device, function (devices) {
   console.log("devices:" + JSON.stringify(devices, null, 2));
 });
 
-var hasBluetooth = blue.checkBluetoothController();
+let hasBluetooth = blue.checkBluetoothController();
 console.log("system has bluetooth controller:" + hasBluetooth);
+
+let pairedDevices = blue.getPairedDevices();
+console.log("system has bluetooth controller:" + pairedDevices);
