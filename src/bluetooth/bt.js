@@ -39,5 +39,12 @@ blue.on(blue.bluetoothEvents.Device, function (devices) {
 let hasBluetooth = blue.checkBluetoothController();
 console.log("system has bluetooth controller:" + hasBluetooth);
 
-let pairedDevices = blue.getPairedDevices();
-console.log("system has bluetooth controller:" + pairedDevices);
+if (hasBluetooth) {
+  console.log("isBluetooth Ready:" + blue.isBluetoothReady);
+  blue.scan(true);
+  setTimeout(function () {
+    console.log("stopping scan");
+    blue.scan(false);
+    blue.info("00:0C:8A:8C:D3:71");
+  }, 20000);
+}
