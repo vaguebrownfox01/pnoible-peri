@@ -10,6 +10,7 @@
   "author": "Jeevan K | vague.brown.fox",
   "license": "ISC",
   "dependencies": {
-    "bleno": "^0.5.0"
+    "bleno": "^0.5.0",
+    "bluetoothctl": "^1.1.0"
   }
 }
