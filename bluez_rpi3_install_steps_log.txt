@@ -1,0 +1,25 @@
+Trying to do what: bluez configure after unzip | bluez5.9
+command : ./configure --enable-testing --enable-tools --prefix=/usr --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var
+
+1. configure: error: GLib >= 2.28 is required
+	link: https://askubuntu.com/questions/359860/error-configure-error-glib-2-28-is-required-while-configuring-bluez-stack
+	sudo apt-get install glib2.0
+	
+2. configure: error: D-Bus >= 1.6 is required
+	link: https://askubuntu.com/questions/506116/bluez-installation-configuration-error-for-dbus-1-6
+	sudo apt install libdbus-1-dev
+	
+3. configure: error: libudev >= 172 is required
+	link : same as above
+	sudo apt install libdbus-1-dev libudev-dev libical-dev libreadline-dev
+	
+4. configure: error: rst2man is required
+	link: https://stackoverflow.com/questions/22167481/install-rst2man-failed-for-varnish-agent-fix
+	sudo apt-get install python-docutils
+	
+	then check
+	sudo which rst2man
+	
+	FINALLY NO ERROR in configure
+	
+
