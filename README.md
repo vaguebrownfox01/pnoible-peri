@@ -16,7 +16,7 @@
 > tar -xvf node-v8.17.0-linux-armv6l.tar.gz
 ```
 ```
-> cp /node-v8.17.0-linux-armv6l/* /usr/local/
+> cp ./node-v8.17.0-linux-armv6l/* /usr/local/
 ```
 ```
 > reboot
