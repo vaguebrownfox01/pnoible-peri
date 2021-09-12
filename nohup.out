@@ -1,0 +1,25 @@
+on -> stateChange: poweredOn, address = b8:27:eb:70:ab:9e
+on -> advertisingStart: success
+on -> servicesSet: success
+on -> stateChange: poweredOn, address = b8:27:eb:70:ab:9e
+on -> advertisingStart: success
+on -> servicesSet: success
+on -> accept, client: 6b:a0:d4:15:a3:8d
+on -> rssiUpdate: -42
+NotifyRSSI subscribe
+NotifyRSSI update value: 0
+NotifyRSSI on notify
+on -> rssiUpdate: -47
+NotifyRSSI update value: -47
+NotifyRSSI on notify
+on -> rssiUpdate: -51
+NotifyRSSI update value: -51
+NotifyRSSI on notify
+on -> rssiUpdate: -56
+NotifyRSSI update value: -56
+NotifyRSSI on notify
+on -> rssiUpdate: -44
+NotifyRSSI update value: -44
+NotifyRSSI on notify
+on -> rssiUpdate: -43
+NotifyRSSI unsubscribe

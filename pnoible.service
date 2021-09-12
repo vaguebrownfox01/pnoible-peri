@@ -1,0 +1,7 @@
+ExecStart=/home/pi/SPIRE/pnoi-ble-r/src/index.js
+Restart=always
+User=root
+Group=nogroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/var/www/<app_name>
