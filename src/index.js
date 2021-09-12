@@ -9,7 +9,7 @@ bleno.on("stateChange", function (state) {
   console.log("on -> stateChange: " + state + ", address = " + bleno.address);
 
   if (state === "poweredOn") {
-    bleno.startAdvertising("LE_Pnoi", ["cafe"]);
+    bleno.startAdvertising("LE_Pnoi", ["cafe"]); // Adv Token: 0xcafe
   } else {
     bleno.stopAdvertising();
   }
@@ -35,7 +35,6 @@ bleno.on("advertisingStop", function () {
 
 bleno.on("accept", function (clientAddress) {
   console.log("on -> accept, client: " + clientAddress);
-
   bleno.updateRssi();
 });
 

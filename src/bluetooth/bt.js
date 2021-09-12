@@ -1,7 +1,7 @@
 /**
  * Created by serkan on 09/12/16.
  */
-var blue = require("bluetoothctl");
+var blue = require("./bluetoothctl");
 blue.Bluetooth();
 
 // blue.on(blue.bluetoothEvents.Connected, UISocket.bluetooth.Connected);
