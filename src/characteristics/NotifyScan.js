@@ -32,7 +32,7 @@ class NotifyScan {
     this.changeInterval = setInterval(
       function () {
         let dataStr = JSON.stringify(this.devices);
-        let data = Buffer.from("aaa", "utf8");
+        let data = Buffer.from(dataStr, "utf8");
         updateValueCallback(data);
       }.bind(this),
       2000
