@@ -28,6 +28,10 @@ class NotifyScan {
         name: "Device 2",
         address: "44:55:66",
       },
+      {
+        name: "Device 2",
+        address: "77:55:99",
+      },
     ];
     this.changeInterval = setInterval(
       function () {
