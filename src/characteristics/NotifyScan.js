@@ -37,6 +37,7 @@ class NotifyScan {
       function () {
         let dataStr = JSON.stringify(this.devices);
         let data = Buffer.from(dataStr, "utf8");
+        console.log("data", { len: data.length, d: data });
         updateValueCallback(data);
       }.bind(this),
       2000
