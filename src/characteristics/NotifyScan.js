@@ -31,9 +31,9 @@ class NotifyScan {
     ];
     this.changeInterval = setInterval(
       function () {
-        let data = JSON.stringify(this.devices);
-        console.log("NotifyScan update value: " + data);
-        updateValueCallback(data);
+        let dataStr = JSON.stringify(this.devices);
+
+        updateValueCallback("aaaa");
       }.bind(this),
       2000
     );
