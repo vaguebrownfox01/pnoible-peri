@@ -1,10 +1,9 @@
-import { NotifyScan } from "../characteristics/NotifyScan";
-
 const util = require("util");
 const bleno = require("bleno");
 
 const { StaticInfo } = require("../characteristics/StaticInfo");
 const { NotifyRSSI } = require("../characteristics/NotifyRSSI");
+const { NotifyScan } = require("../characteristics/NotifyScan");
 
 const BlenoPrimaryService = bleno.PrimaryService;
 
