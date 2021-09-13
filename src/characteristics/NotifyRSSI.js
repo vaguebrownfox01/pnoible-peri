@@ -5,13 +5,13 @@ const BlenoCharacteristic = bleno.Characteristic;
 const BlenoDescriptor = bleno.Descriptor;
 
 class NotifyRSSI {
-  constructor() {
+  constructor({ uuid, uuid_des }) {
     NotifyRSSI.super_.call(this, {
-      uuid: "fad1",
+      uuid,
       properties: ["notify"],
       descriptors: [
         new BlenoDescriptor({
-          uuid: "fa11",
+          uuid: uuid_des,
           value: "Notify rssi to client",
         }),
       ],

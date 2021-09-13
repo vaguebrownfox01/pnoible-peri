@@ -17,13 +17,13 @@ const BlenoDescriptor = bleno.Descriptor;
 // });
 
 class RecordControl {
-  constructor() {
+  constructor({ uuid, uuid_des }) {
     RecordControl.super_.call(this, {
-      uuid: "ace1",
+      uuid,
       properties: ["write"],
       descriptors: [
         new BlenoDescriptor({
-          uuid: "ac11",
+          uuid: uuid_des,
           value: "Send commands to execute",
         }),
       ],

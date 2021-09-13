@@ -5,14 +5,14 @@ const BlenoCharacteristic = bleno.Characteristic;
 const BlenoDescriptor = bleno.Descriptor;
 
 class StaticInfo {
-  constructor() {
+  constructor({ uuid, uuid_des }) {
     StaticInfo.super_.call(this, {
-      uuid: "fad2",
+      uuid,
       properties: ["read"],
       value: Buffer.from("Pnoi-phone", "utf8"),
       descriptors: [
         new BlenoDescriptor({
-          uuid: "fa22",
+          uuid: uuid_des,
           value: "Pnoi phone BLE interface",
         }),
       ],
