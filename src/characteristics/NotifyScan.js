@@ -32,9 +32,8 @@ class NotifyScan {
     this.changeInterval = setInterval(
       function () {
         let dataStr = JSON.stringify(this.devices);
-        let arr = stringToUint(dataStr);
-
-        updateValueCallback(arr);
+        let data = Buffer.from("aaa", "utf8");
+        updateValueCallback(data);
       }.bind(this),
       2000
     );
@@ -55,19 +54,3 @@ class NotifyScan {
 util.inherits(NotifyScan, BlenoCharacteristic);
 
 module.exports = { NotifyScan };
-
-function stringToUint(string) {
-  var string = btoa(unescape(encodeURIComponent(string))),
-    charList = string.split(""),
-    uintArray = [];
-  for (var i = 0; i < charList.length; i++) {
-    uintArray.push(charList[i].charCodeAt(0));
-  }
-  return new Uint8Array(uintArray);
-}
-
-function uintToString(uintArray) {
-  var encodedString = String.fromCharCode.apply(null, uintArray),
-    decodedString = decodeURIComponent(escape(atob(encodedString)));
-  return decodedString;
-}
