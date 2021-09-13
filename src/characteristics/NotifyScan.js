@@ -29,7 +29,7 @@ class NotifyScan {
         address: "44:55:66",
       },
       {
-        name: "Device 2",
+        name: "Device 3",
         address: "77:55:99",
       },
     ];
