@@ -8,7 +8,7 @@ class NotifyScan {
   constructor({ uuid, uuid_des }) {
     NotifyScan.super_.call(this, {
       uuid,
-      properties: ["notify"],
+      properties: ["notify", "read"],
       descriptors: [
         new BlenoDescriptor({
           uuid: uuid_des,
@@ -27,10 +27,6 @@ class NotifyScan {
       {
         name: "Device 2",
         address: "44:55:66",
-      },
-      {
-        name: "Device 3",
-        address: "77:55:99",
       },
     ];
     this.changeInterval = setInterval(
